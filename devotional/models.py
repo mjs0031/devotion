@@ -24,4 +24,4 @@ class Devotional(models.Model):
     title = models.CharField(max_length=128)
     month = models.IntegerField()
     day   = models.IntegerField()
-    body  = models.TextField(default='')
+    body  = models.TextField()

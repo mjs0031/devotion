@@ -2,9 +2,12 @@
 # Not applicable
 
 """ Django Package Support """
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response, render
+from django.views.generic import TemplateView
 
 """ Internal Package Support """
+from devotional.forms import Devotional_Form
 from devotional.models import Devotional
 
 """
@@ -46,4 +49,34 @@ def the_count(request):
         'total' : total,
             }
     return render_to_response('the_count_template.html', dictionary)
+
+
+class create_devotional(TemplateView):
+    """
+    View for rendering and submitting the form for creating a new devotional. 
+    """
+    form_class    = Devotional_Form
+    template_name = 'create_devotional.html'
+
+
+    def get(self, request, *args, **kwargs):
+            
+        form = self.form_class()
+
+        return render(request, self.template_name, {'form': form})
+
+
+    def post(self, request, *args, **kwargs):
+        
+        form = self.form_class(request.POST)
+        #form = self.form_class()
+            
+        if form.is_valid():
+            
+            form.create_devotional()
+               
+            return HttpResponseRedirect('/')
+          
+        return render(request, self.template_name, {'form': form})
+
         

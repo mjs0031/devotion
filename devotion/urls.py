@@ -4,7 +4,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 from devotional.views import (devotionals, the_count,
-                              specific_devotional)
+                              specific_devotional,
+                              create_devotional)
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,5 +16,6 @@ urlpatterns = patterns('',
 
     url(r'^$', devotionals),
     url(r'^count/$', the_count),
+    url(r'^create/$', create_devotional.as_view()),
     url(r'^devotional/(\d+)/$', specific_devotional),
 )
