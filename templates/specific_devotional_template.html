@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<title>Devotional {{ the_devotional.pk }}</title>
+</head>
+
+<body>
+	<h1><b><i>Devotional: Verbose Exploration</b></i></h1>
+	
+	<hr>
+	<h3>Title:  {{the_devotional.title}}</h3>
+	
+	<table>
+		<tr><td width="100">Month:</td><td>{{ the_devotional.month }}</td></tr>
+		<tr><td>Day:</td><td>{{ the_devotional.day }}</td></tr>
+		<tr><td>Body:</td><td>{{ the_devotional.body }}</td></tr>
+	</table>
+
+
+	<hr>
+	<h3>Links:</h3>
+
+	<ul>
+		<li><a href="/">Homepage</a></li>
+		<br>
+		<li><a href="/count/">count of words</a></li>
+		<br>
+		<li><a href="/admin/">admin_site</a></li>
+
+	</ul>
+</body>
+</html>

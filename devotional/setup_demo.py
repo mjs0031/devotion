@@ -9,11 +9,12 @@ from devotional.models import Devotional
 
 """
 
- Testing/Low_Level/event_import.py
- Author:      Matthew J Swann
- Version:     1.0
- Last Update: 2013-01-02
- Update By:   Matthew J Swann
+ File       :: devotional/setup_demo.py
+ 
+ Author(s)  :: Matthew J Swann
+ Version    :: 1.0
+ Last Mod   :: 2014-08-11
+ Mod by     :: Matthew J Swann
  
  
  Importing CSV to Devotional Table.

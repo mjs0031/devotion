@@ -1,0 +1,31 @@
+<html>
+<head>
+	<title>Devotionals</title>
+</head>
+
+<body>
+	<h1><b><i>Devotionals: Complete Listing</i></b></h1>
+	
+	<hr>
+	<h3>Currently Entered:</h3>
+
+	<br>
+	<table>
+		<tr><td width="250"><b>Title:</b></td><td width="100"><b>Month:</b></td><td width="100"><b>Day:</b></td></tr>
+		{% for entry in devotionals_all %}
+			<tr><td><a href="/devotional/{{entry.id}}/">{{entry.title}}</a></td><td>{{entry.month}}</td><td>{{entry.day}}</td></tr>
+		{% endfor %}
+	</table>
+
+	<br>
+	<hr>
+	<h3>Links:</h3>
+
+	<ul>
+		<li><a href="/count/">count of words</a></li>
+		<br>
+		<li><a href="/admin/">admin_site</a></li>
+	</ul>
+
+</body>
+</html>
